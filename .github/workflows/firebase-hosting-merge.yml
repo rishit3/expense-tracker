@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -25,9 +26,12 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EXPENSE_TRACKER_3FBAD }}
           channelId: live
           projectId: expense-tracker-3fbad
+          # Optional: Add Firebase Token if needed
+          token: ${{ secrets.FIREBASE_AUTH_TOKEN }} # Use Firebase token here for authentication
