@@ -1,0 +1,236 @@
+/* Main container */
+.expense-tracker {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #333333; /* Dark background to contrast with #212121 */
+  color: #f0f0f0; /* Light text for readability on dark background */
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 1rem; /* Remove the line by removing the border-bottom */
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  color: #e0e0e0; /* Lighter color for header text */
+  font-weight: 700;
+}
+
+.profile-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #4a4a4a; /* Darker border for the profile photo */
+  position: absolute;
+  top: 0;
+  right: 20px;
+  object-fit: cover;
+}
+
+.sign-out-button {
+  background: #444444; /* Dark button color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sign-out-button:hover {
+  background: #666666; /* Lighter shade for hover */
+}
+
+/* Balance cards layout */
+.balance-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.card {
+  background: #444444; /* Dark card background */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for contrast */
+  text-align: center;
+  flex: 1;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  color: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 2.2rem;
+  color: #e0e0e0;
+  font-weight: 700;
+}
+
+/* Transaction form */
+.add-transaction {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2.5rem;
+}
+
+.add-transaction input {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #888888; /* Light grey border */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-transaction input:focus {
+  border-color: #f0f0f0; /* Focus border color */
+  outline: none;
+}
+
+.transaction-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="radio"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  padding: 1rem;
+  background: #555555; /* Dark button for form submission */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #666666; /* Lighter hover state */
+}
+
+/* Transaction history section */
+.transaction-history {
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+/* Transaction History Heading */
+.transaction-history h3 {
+  font-size: 2rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* List of transactions */
+.transaction-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each transaction item */
+.transaction-history li {
+  background: #3a3a3a; /* Dark background for transaction items */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.transaction-history li:hover {
+  transform: translateY(-5px);
+}
+
+.transaction-history .expense {
+  background: #e74c3c; /* Red background for expenses */
+}
+
+.transaction-history .income {
+  background: #27ae60; /* Green background for income */
+}
+
+.transaction-history .transaction-type-label {
+  font-weight: bold;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.transaction-history .expense .transaction-type-label {
+  background: #c0392b; /* Darker red label for expenses */
+}
+
+.transaction-history .income .transaction-type-label {
+  background: #1e824c; /* Darker green label for income */
+}
+
+/* Amount styling */
+.transaction-history .amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-left: 1rem;
+  text-align: right;
+}
+
+.transaction-history .description {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-right: 1rem;
+  text-align: left;
+}
